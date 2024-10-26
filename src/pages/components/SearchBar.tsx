@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const SearchBar = () => {
+interface SearchBarProps {
+  onSearch(query: string): void
+}
+
+const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [query, setQuery] = useState('')
 
   const handleSearch = () => {
-    // do something
+    onSearch(query)
   }
 
   return (
