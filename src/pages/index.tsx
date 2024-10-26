@@ -44,7 +44,17 @@ export default function Home() {
       <SearchBar onSearch={fetchHosts} />
       <div className="container mx-auto flex">
         <div className="flex flex-col flex-1 pt-20 items-center">
-          {loading ? <Loader /> : <ResultsContainer />}
+          {loading ? (
+            <Loader />
+          ) : (
+            <ResultsContainer
+              data={data}
+              query={query}
+              onPageNav={fetchHosts}
+              next={data.result.links.next}
+              prev={data.result.links.prev}
+            />
+          )}
         </div>
       </div>
     </Fragment>
