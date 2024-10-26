@@ -1,14 +1,16 @@
-interface Result {
+export interface Hits {
   ip: string
   services: object[]
 }
 
 export interface SearchResponseData {
   result: {
-    hits: Result[]
+    duration: number
+    hits: Hits[]
     links: {
       next: string
       prev: string
     }
+    total: number
   }
 }
