@@ -33,7 +33,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
           />
           <button
             onClick={handleSearch}
-            className="py-1 px-5 bg-blue-600 text-white focus:outline-none"
+            className="SearchBar-button py-1 px-5 bg-blue-600 text-white focus:outline-none"
           >
             Search
           </button>

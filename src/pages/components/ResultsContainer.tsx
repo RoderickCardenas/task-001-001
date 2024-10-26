@@ -1,4 +1,5 @@
 import { SearchResponseData } from '@/types'
+import Result from './Result'
 
 interface ResultsContainerProps {
   data: SearchResponseData
@@ -29,6 +30,9 @@ export default function ResultsContainer({
   return (
     <div>
       <h1 className="m-10">Results</h1>
+      {data.result.hits.map((hit, index) => (
+        <Result key={`${index}-${hit.ip}`} hit={hit} />
+      ))}
       <button
         className={btnStyle(prev)}
         disabled={isDisabled(prev)}
