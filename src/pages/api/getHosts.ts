@@ -12,8 +12,8 @@ export default async function getHosts(
     return
   }
 
-  const apiId = '95705197-2eb4-447a-9731-72eb9e8a4673'
-  const apiSecret = 'vj5ZtMvxCGF8hkLpC0EVS7a2xtWxAoCN'
+  const apiId = process.env.API_ID || ''
+  const apiSecret = process.env.API_SECRET || ''
 
   const authorization = `Basic ${Buffer.from(`${apiId}:${apiSecret}`).toString(
     'base64'
